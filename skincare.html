@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Flatroot skincare products.">
+  <title>Skincare | Flatroot</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ===== Header (same on every page) ===== -->
+  <header class="site-header">
+    <a href="index.html" class="logo">Flatroot</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
+    <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span></label>
+    <nav class="navigation" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="skincare.html" class="active" aria-current="page">Skincare</a>
+        <a href="bath-body.html">Bath &amp; Body</a>
+        <a href="hair.html">Hair</a>
+        <a href="ingredients.html">Ingredients</a>
+        <a href="how-to-use.html">How to Use</a>
+        <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="products page-section">
+      <h1 class="title">Skincare</h1>
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-image">
+            <img src="https://i.pinimg.com/564x/09/10/49/09104982dec7654c8324ab0d1a085776.jpg" alt="OAT" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-name">OAT</p>
+            <div class="product-row">
+              <span class="product-price">$200</span>
+              <button type="button" class="add-to-cart">Add to cart</button>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-image">
+            <img src="https://i.pinimg.com/564x/10/0b/62/100b62e99d35ae30b7f0248c454378b1.jpg" alt="Hanvely" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-name">Hanvely</p>
+            <div class="product-row">
+              <span class="product-price">$140</span>
+              <button type="button" class="add-to-cart">Add to cart</button>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-image">
+            <img src="https://i.pinimg.com/564x/1a/40/f6/1a40f6c0ded308c5f517a7422f1b37bc.jpg" alt="O&rsquo;clearien" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-name">O&rsquo;clearien</p>
+            <div class="product-row">
+              <span class="product-price">$99</span>
+              <button type="button" class="add-to-cart">Add to cart</button>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-image">
+            <img src="https://i.pinimg.com/564x/34/e6/05/34e605e9f5ed768e7d78f7785c59a2d5.jpg" alt="Kylieskin" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-name">Kylieskin</p>
+            <div class="product-row">
+              <span class="product-price">$180</span>
+              <button type="button" class="add-to-cart">Add to cart</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer (same on every page) ===== -->
+  <footer class="site-footer">
+    <p class="footer-title">Flat<span>root</span></p>
+    <p>&copy; <span id="year"></span> Flatroot. All rights reserved.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

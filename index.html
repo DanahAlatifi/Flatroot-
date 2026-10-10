@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Flatroot — modern skincare, bath & body and hair care.">
+  <title>Home | Flatroot</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="home">
+
+  <!-- ===== Header (same on every page) ===== -->
+  <header class="site-header">
+    <a href="index.html" class="logo">Flatroot</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
+    <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span></label>
+    <nav class="navigation" aria-label="Main">
+        <a href="index.html" class="active" aria-current="page">Home</a>
+        <a href="skincare.html">Skincare</a>
+        <a href="bath-body.html">Bath &amp; Body</a>
+        <a href="hair.html">Hair</a>
+        <a href="ingredients.html">Ingredients</a>
+        <a href="how-to-use.html">How to Use</a>
+        <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Hello,<br><span>Flatroot</span></h2>
+        <h3>Your skin deserves better than old-school skincare.</h3>
+        <a href="#best-sellers" class="main-btn">Shop All</a>
+      </div>
+    </section>
+
+    <!-- Best sellers -->
+    <section class="products" id="best-sellers">
+      <h2 class="title">Best Sellers</h2>
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-image">
+            <img src="https://hellobubble.com/cdn/shop/products/PDP_MoisturizingBundle1.jpg?v=1668123441&width=832" alt="No More Dry Bundle" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-name">No More Dry Bundle</p>
+            <div class="product-row">
+              <span class="product-price">$49</span>
+              <button type="button" class="add-to-cart">Add to cart</button>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-image">
+            <img src="https://hellobubble.com/cdn/shop/products/PDP_MaskBundle1.jpg?v=1701713704&width=832" alt="The Masknificent Three" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-name">The Masknificent Three</p>
+            <div class="product-row">
+              <span class="product-price">$39</span>
+              <button type="button" class="add-to-cart">Add to cart</button>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-image">
+            <img src="https://hellobubble.com/cdn/shop/files/PDP_RISE-SHINE_2.jpg?v=1701713645&width=832" alt="The Base Routine" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-name">The Base Routine</p>
+            <div class="product-row">
+              <span class="product-price">$99</span>
+              <button type="button" class="add-to-cart">Add to cart</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer (same on every page) ===== -->
+  <footer class="site-footer">
+    <p class="footer-title">Flat<span>root</span></p>
+    <p>&copy; <span id="year"></span> Flatroot. All rights reserved.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

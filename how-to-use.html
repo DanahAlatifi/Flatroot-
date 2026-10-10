@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How to use Flatroot products.">
+  <title>How to Use | Flatroot</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ===== Header (same on every page) ===== -->
+  <header class="site-header">
+    <a href="index.html" class="logo">Flatroot</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
+    <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span></label>
+    <nav class="navigation" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="skincare.html">Skincare</a>
+        <a href="bath-body.html">Bath &amp; Body</a>
+        <a href="hair.html">Hair</a>
+        <a href="ingredients.html">Ingredients</a>
+        <a href="how-to-use.html" class="active" aria-current="page">How to Use</a>
+        <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-section">
+      <h1 class="title">How to Use</h1>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/SIRf3ZYSCrs?rel=0&amp;modestbranding=1"
+                title="How to use Truffle Therapy Morning Dew"
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+      </div>
+
+      <div class="feedback">
+        <p>Was this video helpful?</p>
+        <div class="feedback-buttons">
+          <button type="button" class="main-btn" data-feedback="useful">Useful</button>
+          <button type="button" class="main-btn outline" data-feedback="useless">Not useful</button>
+        </div>
+        <p class="feedback-message" id="feedback-message" role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer (same on every page) ===== -->
+  <footer class="site-footer">
+    <p class="footer-title">Flat<span>root</span></p>
+    <p>&copy; <span id="year"></span> Flatroot. All rights reserved.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

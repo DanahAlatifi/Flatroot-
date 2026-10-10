@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Log in to your Flatroot account.">
+  <title>Login | Flatroot</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ===== Header (same on every page) ===== -->
+  <header class="site-header">
+    <a href="index.html" class="logo">Flatroot</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
+    <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span></label>
+    <nav class="navigation" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="skincare.html">Skincare</a>
+        <a href="bath-body.html">Bath &amp; Body</a>
+        <a href="hair.html">Hair</a>
+        <a href="ingredients.html">Ingredients</a>
+        <a href="how-to-use.html">How to Use</a>
+        <a href="login.html" class="active" aria-current="page">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-section">
+      <form class="login-form" id="login-form" novalidate>
+        <h1 class="login-title" id="login-title">Login</h1>
+        <p class="login-subtitle">User information</p>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter email" autocomplete="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" autocomplete="current-password" required>
+
+        <label class="remember"><input type="checkbox" name="remember"> Remember me</label>
+
+        <button type="submit" class="main-btn">Submit</button>
+        <p class="form-message" id="form-message" role="alert"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===== Footer (same on every page) ===== -->
+  <footer class="site-footer">
+    <p class="footer-title">Flat<span>root</span></p>
+    <p>&copy; <span id="year"></span> Flatroot. All rights reserved.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
