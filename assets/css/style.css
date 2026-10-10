@@ -1,0 +1,355 @@
+/* =========================================================
+   Flatroot — main stylesheet
+   Sections: 1. Base  2. Header  3. Hero  4. Buttons
+             5. Products  6. Ingredients  7. How to use
+             8. Login  9. Footer  10. Responsive
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #e9ddd6;          /* beige page background */
+  --surface: #ffffff;     /* cards, header */
+  --header: #f0f0f0;
+  --text: #333333;
+  --muted: #808080;       /* gray logo / titles / links */
+  --accent: #cd4154;      /* hover color */
+  --link: #3a6cf4;        /* add-to-cart link color */
+  --dark: #000016;        /* footer */
+  --header-h: 72px;
+}
+
+/* ---------- 1. Base ---------- */
+*,
+*::before,
+*::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1; }
+
+img { max-width: 100%; display: block; }
+
+section { padding: 100px 200px; }
+
+/* Pages without a hero need room under the fixed header */
+.page-section { padding-top: calc(var(--header-h) + 60px); }
+
+.title {
+  display: flex;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 2.2em;
+  font-weight: 800;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* ---------- 2. Header ---------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: var(--header-h);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 200px;
+  background: var(--header);
+}
+
+.logo {
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.8em;
+}
+
+.navigation a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 1.05em;
+  font-weight: 500;
+  padding-left: 30px;
+  transition: color .2s ease;
+}
+
+.navigation a:hover,
+.navigation a.active { color: var(--accent); }
+
+/* Mobile menu toggle (hidden on desktop) */
+.nav-toggle { display: none; }
+.nav-toggle-label { display: none; }
+
+/* ---------- 3. Hero (home page) ---------- */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: url('https://assets1.drugstorenews.com/s3fs-public/styles/max_width_480/public/2023-12/bubbleskincare_moonwalk_waterslide_lifestyle1.jpg') no-repeat center / cover fixed;
+}
+
+.hero h2 { color: #fff; font-size: 1.4em; font-weight: 500; }
+
+.hero h2 span {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 3em;
+  font-weight: 600;
+}
+
+.hero h3 {
+  color: #fff;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 10px 0 30px;
+  max-width: 18ch;
+}
+
+/* ---------- 4. Buttons ---------- */
+.main-btn {
+  display: inline-block;
+  padding: .9em 2.2em;
+  border: 2px solid var(--muted);
+  border-radius: 15px;
+  background: var(--muted);
+  color: #fff;
+  font: inherit;
+  font-size: 1.05em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .4s ease;
+}
+
+.main-btn:hover { background: #000; border-color: #000; transform: scale(1.05); }
+
+.main-btn.outline { background: transparent; color: var(--muted); }
+.main-btn.outline:hover { color: #fff; }
+
+/* ---------- 5. Products ---------- */
+.products { background: var(--bg); }
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.product-card {
+  width: 23em;
+  margin: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--surface);
+  transition: transform .5s ease;
+}
+
+.product-card:hover { transform: scale(1.05); }
+
+.product-image { aspect-ratio: 1 / 1; background: #f5efeb; }
+.product-image img { width: 100%; height: 100%; object-fit: cover; transition: opacity .3s; }
+.product-card:hover .product-image img { opacity: .9; }
+
+.product-info { padding: 1em; }
+
+.product-name { font-size: .85em; color: #000; }
+
+.product-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.add-to-cart {
+  border: 0;
+  background: none;
+  color: var(--link);
+  font: inherit;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.add-to-cart:hover { color: #601cfc; }
+.add-to-cart.added { color: var(--accent); }
+
+/* ---------- 6. Ingredients ---------- */
+.table-wrap { max-width: 720px; margin: 0 auto; overflow-x: auto; }
+
+.ingredients-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.ingredients-table caption {
+  color: var(--muted);
+  font-size: 1.4em;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+
+.ingredients-table th,
+.ingredients-table td {
+  padding: 14px 20px;
+  text-align: center;
+  border-bottom: 1px solid #f0e6e0;
+}
+
+.ingredients-table th { background: #fff; color: var(--text); }
+.ingredients-table td { background: #fffafa; color: #c27a8a; }
+.ingredients-table tbody tr:last-child td { border-bottom: 0; }
+
+/* ---------- 7. How to use ---------- */
+.video-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-wrap iframe { width: 100%; height: 100%; border: 0; }
+
+.feedback { margin-top: 40px; text-align: center; }
+.feedback > p:first-child { color: var(--muted); font-weight: 600; margin-bottom: 16px; }
+.feedback-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.feedback-message { margin-top: 16px; min-height: 1.5em; color: var(--accent); }
+
+/* ---------- 8. Login ---------- */
+.login-form {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+}
+
+.login-title {
+  color: var(--muted);
+  font-size: 2.5em;
+  text-align: center;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+.login-title.clicked { color: #000; }
+
+.login-subtitle { text-align: center; color: var(--muted); margin-bottom: 28px; }
+
+.login-form label { font-size: .9em; font-weight: 500; margin-bottom: 6px; }
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  height: 54px;
+  padding: 0 16px;
+  margin-bottom: 18px;
+  border: 1px solid #b5b5b5;
+  border-radius: 10px;
+  font: inherit;
+  outline: none;
+}
+
+.login-form input:focus { border-color: var(--accent); }
+
+.login-form .remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+.form-message { margin-top: 16px; min-height: 1.5em; text-align: center; color: var(--accent); }
+
+/* ---------- 9. Footer ---------- */
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 2em 200px;
+  background: var(--dark);
+  color: #fff;
+}
+
+.footer-title { font-size: 1.3em; font-weight: 600; }
+.footer-title span { color: var(--link); }
+
+/* ---------- 10. Responsive ---------- */
+@media (max-width: 1023px) {
+  section { padding: 80px 20px; }
+  .page-section { padding-top: calc(var(--header-h) + 40px); }
+  .site-header, .site-footer { padding-left: 20px; padding-right: 20px; }
+  .title { font-size: 1.8em; }
+  .hero { background-attachment: scroll; }
+  .hero h3 { font-size: 1.6em; }
+
+  /* Hamburger menu */
+  .nav-toggle-label {
+    display: flex;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--muted);
+    position: relative;
+    content: "";
+  }
+  .nav-toggle-label span::before { position: absolute; top: -8px; }
+  .nav-toggle-label span::after  { position: absolute; top: 8px; }
+
+  .navigation {
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    padding: 10px 20px 20px;
+    background: var(--header);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .06);
+  }
+  .navigation a { padding: 12px 0; }
+  .nav-toggle:checked ~ .navigation { display: flex; }
+}
+
+@media (max-width: 641px) {
+  body { font-size: 13px; }
+  .product-card { width: 100%; max-width: 23em; margin: 12px 0; }
+  .login-form { padding: 28px 20px; }
+}
