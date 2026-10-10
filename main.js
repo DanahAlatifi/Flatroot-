@@ -1,0 +1,85 @@
+/* =========================================================
+   Flatroot — main script (shared by every page)
+   ========================================================= */
+
+// Footer year
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// Close the mobile menu after choosing a link
+document.querySelectorAll('.navigation a').forEach((link) => {
+  link.addEventListener('click', () => {
+    const toggle = document.getElementById('nav-toggle');
+    if (toggle) toggle.checked = false;
+  });
+});
+
+// Cart counter — saved in the browser so it stays between pages (no checkout yet)
+const CART_KEY = 'flatroot-cart-count';
+const cartCountEl = document.getElementById('cart-count');
+
+function readCart() {
+  try { return Number(localStorage.getItem(CART_KEY)) || 0; } catch { return 0; }
+}
+function renderCart(count, bump = false) {
+  if (!cartCountEl) return;
+  cartCountEl.textContent = count;
+  cartCountEl.classList.toggle('has-items', count > 0);
+  if (bump) {
+    cartCountEl.classList.remove('bump');
+    void cartCountEl.offsetWidth; // restart animation
+    cartCountEl.classList.add('bump');
+  }
+}
+renderCart(readCart());
+
+document.querySelectorAll('.add-to-cart').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const count = readCart() + 1;
+    try { localStorage.setItem(CART_KEY, count); } catch { /* storage blocked */ }
+    renderCart(count, true);
+
+    btn.textContent = 'Added ✓';
+    btn.classList.add('added');
+    setTimeout(() => {
+      btn.textContent = 'Add to cart';
+      btn.classList.remove('added');
+    }, 1400);
+  });
+});
+
+// How to use — feedback buttons
+document.querySelectorAll('[data-feedback]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const msg = document.getElementById('feedback-message');
+    if (!msg) return;
+    msg.textContent =
+      btn.dataset.feedback === 'useful'
+        ? 'Thank you! Glad it helped.'
+        : 'Thanks for telling us — we will improve it.';
+  });
+});
+
+// Login — title color + simple form check (no real login yet)
+const loginTitle = document.getElementById('login-title');
+if (loginTitle) {
+  loginTitle.addEventListener('click', () => loginTitle.classList.toggle('clicked'));
+}
+
+const loginForm = document.getElementById('login-form');
+if (loginForm) {
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const msg = document.getElementById('form-message');
+    const email = loginForm.email.value.trim();
+    const password = loginForm.password.value;
+
+    if (!email || !loginForm.email.checkValidity()) {
+      msg.textContent = 'Please enter a valid email.';
+    } else if (password.length < 6) {
+      msg.textContent = 'Password must be at least 6 characters.';
+    } else {
+      msg.textContent = 'Login is not connected yet — this is a demo form.';
+    }
+  });
+}
